@@ -9,7 +9,7 @@
         <title>꽃길-마이페이지</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="<%=request.getContextPath() %>/resources/images/mainImage2.jpg" type="image/ico" />
+        <link rel="icon" href="<%=request.getContextPath() %>/resources/images/FlowerRoadLogo.png" type="image/ico" />
          <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/bootstrap.min.css">
          <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/myInfo.css">
         <script src="<%=request.getContextPath() %>/resources/js/jquery-1.12.2.min.js"></script>
@@ -46,7 +46,7 @@
                       </ul>
                     </div>
                       <div class="col-xs-6" style="text-align:center; display:inline-block;">
-                          <img src="../images/city1.PNG" style="width:120px; height:80px"alt="">
+                          <img src="<%=request.getContextPath() %>/resources/images/mainImage2.jpg" style="width:120px; height:80px"alt="">
                       </div>
                     <div class="col-xs-3">
                         <ul class="nav navbar-nav navbar-right">

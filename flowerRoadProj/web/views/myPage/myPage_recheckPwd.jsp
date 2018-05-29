@@ -41,7 +41,7 @@
                       </ul>
                     </div>
                       <div class="col-xs-6" style="text-align:center; display:inline-block;">
-                          <img src="../images/city1.PNG" style="width:120px; height:80px"alt="">
+                          <img src="<%=request.getContextPath() %>/resources/images/mainImage2.jpg" style="width:120px; height:80px"alt="">
                       </div>
                     <div class="col-xs-3">
                         <ul class="nav navbar-nav navbar-right">
@@ -56,18 +56,16 @@
         <!-- 마이페이지 카테고리  -->
         <br><br><br><br><br><br><br><br><br><br>
         <div class="container-fluid">
-            <div class="col-sm-2 col-md-2 col-lg-2"></div>
-            <div class="recheckPwd col-md-8 col-sm-8 col-lg-8">
-                <div class="col-sm-4 col-md-4 col-lg-4"></div>
-                <div class="container col-sm-4 col-md-4 col-lg-4" id="recheckText">
-                    <img src="../../images/rock3.jpg " class="img-rounded " width="200px" height="150px"> <span><i>비밀번호 재확인</i></span></div>
-                <div class="col-sm-4 col-md-4 col-lg-4"></div>
-            </div>
-            <div class="col-sm-2 col-md-2 col-lg-2"></div>
+            <div class="col-sm-1 col-md-1 col-lg-1"></div>
+            <div class="category col-sm-2 col-md-2 col-lg-2" 
+                style="font-weight:bold; text-decoration: underline;" id="info" onclick="info();">내 정보</div>
+            <div class="category col-sm-2 col-md-2 col-lg-2" id="check" onclick="orderChk();">주문 조회</div>
+            <div class="category col-sm-2 col-md-2 col-lg-2" id="favarite" onclick="favorite();">관심 상품</div>
+            <div class="category col-sm-2 col-md-2 col-lg-2" id="1on1" onclick="oneToOne();">1:1 문의</div>
+            <div class="col-sm-3 col-md-3 col-lg-3"></div> 
         </div>
 
         <br><br>
-
         <!-- 비밀번호 재확인 창 -->
         <div class="container-fluid">
                 <div class="col-sm-4 col-md-4 col-lg-4"></div>
