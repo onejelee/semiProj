@@ -9,12 +9,12 @@
         <title>꽃길-정보 수정</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="<%=request.getContextPath() %>/resource/images/title_image.png" type="image/ico" />
-         <link rel="stylesheet" href="<%=request.getContextPath() %>/resource/css/bootstrap.min.css">
+        <link rel="icon" href="<%=request.getContextPath() %>/resources/images/title_image.png" type="image/ico" />
+         <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/bootstrap.min.css">
          <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/myInfo.css">
-        <script src="<%=request.getContextPath() %>/resource/js/jquery-1.12.2.min.js"></script>
-        <script src="<%=request.getContextPath() %>/resource/js/bootstrap.min.js"></script>
-        <script src="<%=request.getContextPath() %>/resource/js/myPage.js"></script>
+        <script src="<%=request.getContextPath() %>/resources/js/jquery-1.12.2.min.js"></script>
+        <script src="<%=request.getContextPath() %>/resources/js/bootstrap.min.js"></script>
+        <script src="<%=request.getContextPath() %>/resources/js/myPage.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <style>
             /*네비바 배경색 조정*/
@@ -88,8 +88,9 @@
                         <div class="col-sm-1 col-md-1 col-lg-1"></div>
                         <div class="col-sm-2 col-md-2 col-lg-2"><b>이름</b></div>
                         <div class="col-sm-2 col-md-2 col-lg-2"></div>
-                        <div class="col-sm-2 col-md-2 col-lg-2"><p class="text-muted" style="font-weight:bold;">
-                        <%= m.getMemberName() %></p></div>  <br><br><br>
+                        <div class="col-sm-2 col-md-2 col-lg-2">
+                        <p class="text-muted" style="font-weight:bold;">
+                        <%=m.getMemberName() %></p></div><br><br><br>
     
                         <div class="col-sm-1 col-md-1 col-lg-1"></div>
                         <div class="col-sm-2 col-md-2 col-lg-2"><b>성별</b></div>
@@ -101,7 +102,7 @@
                         <div class="col-sm-2 col-md-2 col-lg-2"><b>주소</b></div>
                         <div class="col-sm-2 col-md-2 col-lg-2"></div>
                         <div class="col-sm-2 col-md-2 col-lg-2">
-                                <input type="text" id="addrModi" name="addrModi" placeholder="내용을 입력해주세요">
+                                <input type="text" id="addr" placeholder="내용을 입력해주세요">
                         </div> <br><br><br>
     
                         <div class="col-sm-1 col-md-1 col-lg-1"></div>
@@ -125,12 +126,22 @@
         <!-- 수정 확인 -->
         <div class="container-fluid">
             <div class="col-sm-5 col-md-5 col-lg-5"></div>
-            <div class="col-sm-2 col-md-2 col-lg-2">>
-                <button id="modify" onclick="modiComplete();"><b>수정완료</b></button>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                <button id="modify" onclick="modiComplete()"><b>수정완료</b></button>
             </div>
             <div class="col-sm-5 col-md-5 col-lg-5"></div>
         </div>
         
-        
+        <script>
+        	function modiComplete(){
+        		alert("확인");
+        		var addr = $('#addr').val();
+        		console.log(addr);
+        		var phone = $('#tel1').val()+$('#tel2').val()+$('#tel3').val();
+        		console.log(phone);
+        		location.href = "<%= request.getContextPath()%>/infoModi.me?addr="+addr+"&phone="+phone;
+        		
+        	}
+        </script>
     </body>
 </html>

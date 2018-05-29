@@ -11,31 +11,33 @@ import javax.servlet.http.HttpSession;
 import com.fr.jsp.member.model.service.MemberService;
 import com.fr.jsp.member.model.vo.Member;
 
-@WebServlet("/pwdChange.me")
-public class MemberPwdChange extends HttpServlet {
+@WebServlet("/infoModi.me")
+public class MemberInfoUpdate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-    public MemberPwdChange() {
+ 
+    public MemberInfoUpdate() {
+        super();
+        // TODO Auto-generated constructor stub
     }
+
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
-		String pwd = request.getParameter("pwd");
-		
+		String addr = request.getParameter("addr");
+		String phone = request.getParameter("phone");
 		
 		Member m = (Member)session.getAttribute("session");
-		//Member m = (Member)request.getAttribute("m");
 		
-		m.setMemberPw(pwd);
+		m.setMemberAddress(addr);
+		m.setMemberPhone(phone);
 		
 		MemberService ms = new MemberService();
 		
-		if(ms.pwdChange(m) != 0){
+		if(ms.memberUpdate(m) != 0){
 			response.sendRedirect("views/myPage/myPage_main.jsp");
 		}else{
 			System.out.println("실패!!");
 		}
-		
 		
 	}
 

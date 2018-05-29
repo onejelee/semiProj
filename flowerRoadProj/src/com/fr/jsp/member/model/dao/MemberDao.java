@@ -116,4 +116,27 @@ public class MemberDao {
 		}
 		return result;
 	}
+
+	public int memberUpdate(Connection con, Member m) {
+		PreparedStatement pstmt = null;
+		int result =0;
+		
+		String query = prop.getProperty("memberUpdate");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, m.getMemberAddress());
+			pstmt.setString(2, m.getMemberPhone());
+			pstmt.setString(3, m.getMemberId());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			close(pstmt);
+		}
+		return result;
+	}
+	
 }
