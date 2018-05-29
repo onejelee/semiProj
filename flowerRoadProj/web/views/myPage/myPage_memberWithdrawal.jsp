@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import = "com.fr.jsp.member.model.vo.*"%>
+<%
+	Member m = (Member)session.getAttribute("session");
+%>
 <!DOCTYPE>
 <html>
     <head>
@@ -95,7 +98,7 @@
             <div class="col-sm-2 col-md-2 col-lg-2"></div>
             <div class="col-sm-2 col-md-2 col-lg-2"></div>
             <div class="col-sm-2 col-md-2 col-lg-2">
-                <button class="redBtn" id="finalWithdraw" onclick="finalWithdraw();"><b>탈퇴 하기</b></button>
+                <button class="redBtn" id="finalWithdraw" onclick="finalWithdraw()"><b>탈퇴 하기</b></button>
             </div>
             
             <div class="col-sm-2 col-md-2 col-lg-2">
@@ -103,5 +106,11 @@
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4"></div>
         </div>
+        
+        <script>
+        	function finalWithdraw(){
+        		location.href = "<%= request.getContextPath() %>/delMember.me";
+        	}
+        </script>
     </body>
 </html>
