@@ -17,6 +17,7 @@ public class Product implements java.io.Serializable{
 	private int productCost;
 	private int productQuantity;
 	private ArrayList<String> images = new ArrayList<String>(); 
+	private ArrayList<String> imageDesc = new ArrayList<String>(); 
 	
 	public ArrayList<String> getImages(){
 		return images;

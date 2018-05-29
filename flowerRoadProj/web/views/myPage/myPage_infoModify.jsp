@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import = "com.fr.jsp.member.model.vo.*"%>
+<%
+	Member m = (Member)session.getAttribute("session");
+%>
 <!DOCTYPE>
 <html>
     <head>
@@ -8,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="<%=request.getContextPath() %>/resource/images/title_image.png" type="image/ico" />
          <link rel="stylesheet" href="<%=request.getContextPath() %>/resource/css/bootstrap.min.css">
-         <link rel="stylesheet" href="<%=request.getContextPath() %>/resource/css/myInfo.css">
+         <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/myInfo.css">
         <script src="<%=request.getContextPath() %>/resource/js/jquery-1.12.2.min.js"></script>
         <script src="<%=request.getContextPath() %>/resource/js/bootstrap.min.js"></script>
         <script src="<%=request.getContextPath() %>/resource/js/myPage.js"></script>
@@ -77,42 +80,28 @@
                     
                         <br>
                         <div class="col-sm-1 col-md-1 col-lg-1"></div>
-                        <div class="col-sm-2 col-md-2 col-lg-2"><b>이름</b></div>
+                        <div class="col-sm-2 col-md-2 col-lg-2"><b>아이디</b></div>
                         <div class="col-sm-2 col-md-2 col-lg-2"></div>
-                        <div class="col-sm-2 col-md-2 col-lg-2"><p class="text-muted" style="font-weight:bold;">홍길동</p></div>  <br><br><br>
+                        <div class="col-sm-2 col-md-2 col-lg-2"><p class="text-muted" style="font-weight:bold;">
+                        <%= m.getMemberId() %></p></div>  <br><br><br>
     
                         <div class="col-sm-1 col-md-1 col-lg-1"></div>
-                        <div class="col-sm-2 col-md-2 col-lg-2"><b>이메일</b></div>
+                        <div class="col-sm-2 col-md-2 col-lg-2"><b>이름</b></div>
                         <div class="col-sm-2 col-md-2 col-lg-2"></div>
-                        <div class="col-sm-2 col-md-2 col-lg-2"><input type="text" id="emailModi" name="emailModi" placeholder="내용을 입력해주세요"></div> <br><br><br>
+                        <div class="col-sm-2 col-md-2 col-lg-2"><p class="text-muted" style="font-weight:bold;">
+                        <%= m.getMemberName() %></p></div>  <br><br><br>
+    
+                        <div class="col-sm-1 col-md-1 col-lg-1"></div>
+                        <div class="col-sm-2 col-md-2 col-lg-2"><b>성별</b></div>
+                        <div class="col-sm-2 col-md-2 col-lg-2"></div>
+                        <div class="col-sm-2 col-md-2 col-lg-2"><p class="text-muted" style="font-weight:bold;">
+                        <%= m.getMemberGender() %></p></div>  <br><br><br>
     
                         <div class="col-sm-1 col-md-1 col-lg-1"></div>
                         <div class="col-sm-2 col-md-2 col-lg-2"><b>주소</b></div>
                         <div class="col-sm-2 col-md-2 col-lg-2"></div>
-                        <div class="col-sm-2 col-md-2 col-lg-2"><input type="text" id="addrModi" name="addrModi" placeholder="내용을 입력해주세요"></div> <br><br><br>
-    
-                        <div class="col-sm-1 col-md-1 col-lg-1"></div>
-                        <div class="col-sm-2 col-md-2 col-lg-2"><b>문자 수신동의</b></div>
-                        <div class="col-sm-2 col-md-2 col-lg-2"></div>
                         <div class="col-sm-2 col-md-2 col-lg-2">
-                                <label class="radio-inline">
-                                        <input type="radio" name="smsInlineRadioOptions" id="inlineRadio1" value="option1"> <b>수신동의</b>
-                                </label>
-                                <label class="radio-inline">
-                                        <input type="radio" name="smsInlineRadioOptions" id="inlineRadio1" value="option1"> <b>동의안함</b>
-                                </label>
-                        </div> <br><br><br>
-    
-                        <div class="col-sm-1 col-md-1 col-lg-1"></div>
-                        <div class="col-sm-2 col-md-2 col-lg-2"><b>이메일 수신동의</b></div>
-                        <div class="col-sm-2 col-md-2 col-lg-2"></div>
-                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                <label class="radio-inline">
-                                        <input type="radio" name="emailInlineRadioOptions" id="inlineRadio2" value="option2"> <b>수신동의</b>
-                                </label>
-                                <label class="radio-inline">
-                                        <input type="radio" name="emailInlineRadioOptions" id="inlineRadio2" value="option2"> <b>동의안함</b>
-                                </label>
+                                <input type="text" id="addrModi" name="addrModi" placeholder="내용을 입력해주세요">
                         </div> <br><br><br>
     
                         <div class="col-sm-1 col-md-1 col-lg-1"></div>
@@ -126,8 +115,8 @@
                         <div class="col-sm-1 col-md-1 col-lg-1"></div>
                         <div class="col-sm-2 col-md-2 col-lg-2"><b>가입날짜</b></div>
                         <div class="col-sm-2 col-md-2 col-lg-2"></div>
-                        <div class="col-sm-2 col-md-2 col-lg-2"><p class="text-muted" style="font-weight:bold;">2018-05-05 &nbsp;&nbsp;&nbsp;
-                                                                                                                 12:34</p></div> <br><br><br>
+                        <div class="col-sm-2 col-md-2 col-lg-2"><p class="text-muted" style="font-weight:bold;">
+                        <%= m.getEnrollDate() %></p></div> <br><br><br>
                     
                 </div>
             </div>
@@ -141,5 +130,7 @@
             </div>
             <div class="col-sm-5 col-md-5 col-lg-5"></div>
         </div>
+        
+        
     </body>
 </html>
