@@ -1,6 +1,8 @@
 package com.fr.jsp.order.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,19 +28,24 @@ public class MemberOrderCheck extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		
+		ArrayList<Order> list = null;
+		
 		Member m = (Member)session.getAttribute("session");
-		Order o = new Order();
+		String id = m.getMemberId();
+		System.out.println(id);
 		
-		OrderService os = new OrderService();
+		list = new OrderService().orderChk(id);
 		
-		o = os.orderChk(m);
-		if(o != null){
-			request.getRequestDispatcher("/views/myPage/orderCheck.jsp")
-			.forward(request, response);
+		System.out.println(list.isEmpty());
+		
+		String page ="";
+		if(list != null && !list.isEmpty()){
+			page = "/views/myPage/orderCheck.jsp";
+			request.setAttribute("list", list);
 		} else {
 			System.out.println("실패");
 		}
-		
+		request.getRequestDispatcher(page).forward(request, response);
 		
 	}
 

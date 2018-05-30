@@ -20,7 +20,7 @@ function rechkCancel(){
 }
 // 카테고리 - 주문조회
 function orderChk(){
-    location.href = "/flowerRoadProj/views/myPage/orderCheck.jsp"
+    location.href = "/flowerRoadProj/orderChk.or"
 }
 // 카테고리 - 관심상품
 function favorite(){

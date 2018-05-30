@@ -14,6 +14,7 @@ public class Order {
 	   private String receiver_address;
 	   private String receiver_phone;
 	   private String order_state_code;
+	   private String anonymous_delivery;
 	   
 	 // 생성자
 	   public Order(){}
@@ -98,6 +99,16 @@ public class Order {
 
 		public void setOrder_state_code(String order_state_code) {
 			this.order_state_code = order_state_code;
+		}
+
+
+		public String getAnonymous_delivery() {
+			return anonymous_delivery;
+		}
+
+
+		public void setAnonymous_delivery(String anonymous_delivery) {
+			this.anonymous_delivery = anonymous_delivery;
 		}
 		   
 }

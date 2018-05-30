@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="java.util.*, com.fr.jsp.order.model.vo.*"%>
+<%
+	ArrayList<Order> list = (ArrayList<Order>)request.getAttribute("list"); 
+%>
 <!DOCTYPE>
 <html>
     <head>
@@ -36,28 +39,7 @@
         </style>
     </head>
     <body>
-        <!-- 상단의 nav 바 -->
-        <nav class="navbar navbar-fixed-top navbar-default">
-            <div class="container-fluid">
-                    <div class="col-xs-3">
-                      <ul class="nav navbar-nav navbar-left">
-                        <li><a href="#">즐겨찾기</a></li>
-                        <!-- 즐겨찾기가 가능한가? 주소는 어디로 해야되나-->
-                      </ul>
-                    </div>
-                      <div class="col-xs-6" style="text-align:center; display:inline-block;">
-                          <img src="<%=request.getContextPath() %>/resources/images/mainImage2.jpg" style="width:120px; height:80px"alt="">
-                      </div>
-                    <div class="col-xs-3">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#">로그인</a></li>
-                            <li><a href="#">회원가입</a></li>
-                            <li><a href="#">장바구니</a></li>
-                            <li><a href="#">고객센터</a></li>
-                          </ul>
-                    </div>
-                  </div>
-        </nav>
+    <%@ include file="/views/common/header.jsp" %>
         <!-- 마이페이지 카테고리  -->
         <br><br><br><br><br><br><br><br><br><br>
         <div class="container-fluid">
@@ -110,22 +92,17 @@
                                 <th>익명발송 여부</th>
                                 <th>배송현황</th>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>05/10/2018</td>
-                                <td>어버이날 감사 상품</td>
-                                <td>5000원</td>
-                                <td>주문상세</td>
-                                <td style="color:green;">배송완료</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>05/12/2018</td>
-                                <td>스승의날 감사 상품</td>
-                                <td>3000원</td>
-                                <td>주문상세</td>
-                                <td style="color:red;">배송준비중</td>
-                            </tr>
+                            <% int i = list.size();
+				for(Order o : list){%>
+					<tr>
+						<td><%= i-- %></td>
+						<td><%=o.getOrdered_date() %></td>
+						<td><%=o.getProduct_num() %></td>
+						<td><%=o.getProduct_cost() %></td>
+						<td><%=o.getAnonymous_delivery() %></td>
+						<td><%=o.getOrder_state_code() %></td>
+					</tr>
+				<% }  %>
                         </table>
                     
                 </div>
@@ -150,6 +127,7 @@
                 </div>
                 <div class="col-sm-5 col-md-5 col-lg-5"></div>
         </div>
-
+        <%@ include file="/views/common/footer.jsp" %>
     </body>
+    
 </html>
