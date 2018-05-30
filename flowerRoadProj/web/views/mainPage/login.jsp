@@ -19,11 +19,11 @@
         }
 */
 
-        #login {
+        .login {
             background-color: lightpink;
         }
 
-        #kakao {
+       /*  #kakao {
             background-color: yellow;
         }
 
@@ -37,7 +37,7 @@
 
         #naver {
             background-color: greenyellow
-        }
+        } */
 
         #SignUp {
             background-color: orange;
@@ -138,12 +138,12 @@
 <div style="overflow:scroll;  background-color:white;" class="form-grorp">
         <h2 class="header" style="text-align: center">로그인</h2>
 
-        <form method="post" class="form-Member" name="Member" onsubmit="return checkValue()">
+        <form id="loginForm" class="form-Member" action="<%=request.getContextPath()%>/login.me" method="post">
             <div class="form-group col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
-                <input type="id" class="form-control" id="inputId" placeholder="아이디">
+                <input type="id" class="form-control" name="userId" placeholder="아이디">
             </div>
             <div class="form-group col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
-                <input type="password" class="form-control" id="inputPassword" placeholder="비밀번호">
+                <input type="password" class="form-control" name="userPwd" placeholder="비밀번호">
             </div>
             <div class="form-group col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
                 <input type="checkbox" id="id_hold_check" name="IdSave">
@@ -152,7 +152,7 @@
 
             <div class="SNSbtn">
                 <div class="form-group col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4" >
-                    <button type="button" class="btn btn-lg col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4" id="login">회원 로그인</button>
+                    <button type="button" class="btn btn-lg col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 login"  onclick='login()'>회원 로그인</button>
                 </div>
                 <div class="form-group col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4" >
                     <a id="kakao-login-btn" class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4"></a>
@@ -181,6 +181,9 @@
   
 <%@include file = "/views/common/footer.jsp" %>
 <script type='text/javascript'>
+function login(){
+	$('#loginForm').submit();
+}
 function signUp(){
 	location.href="signUp.jsp";
 }

@@ -117,6 +117,46 @@ public class MemberDao {
 		return result;
 	}
 	
+	// 로그인 아이디 찾기
+	public Member loginSelectMember(Connection con, Member m) {
+	      PreparedStatement pstmt = null;
+	      ResultSet rset = null;
+	      Member resultMember = null;
+	      try {
+	         
+	         String query = prop.getProperty("loginMemberSelect");
+	         pstmt = con.prepareStatement(query);
+	         pstmt.setString(1, m.getMemberId());
+	         pstmt.setString(2, m.getMemberPw());
+	         rset = pstmt.executeQuery();
+	         if(rset.next()){
+	            resultMember = new Member();
+	            
+	            
+	            resultMember.setMemberNum((rset.getString("MEMBER_NUM")));
+	            resultMember.setMemberId((rset.getString("MEMBER_ID")));
+	            resultMember.setMemberPw(rset.getString("MEMBER_PW"));
+	            resultMember.setMemberName((rset.getString("MEMBER_NAME")));
+	            resultMember.setMemberAddress((rset.getString("MEMBER_ADDRESS")));
+	            resultMember.setMemberPhone(rset.getString("MEMBER_PHONE"));
+	            if(rset.getString("MEMBER_GENDER")!=null){   
+	            resultMember.setMemberGender(rset.getString("MEMBER_GENDER").charAt(0));
+	            }
+	            resultMember.setMemberBirthDate(rset.getDate("MEMBER_BIRTH_DATE"));
+	            resultMember.setGradeCode(rset.getString("GRADE_CODE"));
+	            resultMember.setSecondPw((rset.getString("SECOND_PW")));
+	            resultMember.setImagePath((rset.getString("IMAGE_PATH")));
+	            resultMember.setEnrollDate((rset.getDate("ENROLL_DATE")));
+	         }
+	      } catch (SQLException e) {
+	         e.printStackTrace();
+	      }finally{
+	         close(rset);
+	         close(pstmt);
+	      }
+	      return resultMember;
+	   }
+	
 	// 회원조회- 메인
 	public Member insertInfo(Connection con, Member m) {
 		PreparedStatement pstmt = null;

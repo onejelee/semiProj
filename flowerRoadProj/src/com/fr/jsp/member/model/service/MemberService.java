@@ -45,6 +45,13 @@ public class MemberService {
 		close(con);
 		return result;
 	}
+	
+	public Member loginSelectMember(Member m) {
+	      Connection con = getConnection();
+	      Member resultM = mDao.loginSelectMember(con,m);
+	      close(con);
+	      return resultM;
+	   }
 
 	public Member insertInfo(Member m) {
 		Connection con = getConnection();

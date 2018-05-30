@@ -22,21 +22,7 @@
 	<!-- // jQuery UI 라이브러리 js파일 -->
 	<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>  
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <style>
-            /*네비바 배경색 조정*/
-             .navbar-default { background-color: rgba(255, 254, 254,0.9); }
-             /*네비바 가운데 정렬*/
-            .navbar .navbar-nav {
-            display: inline-block;
-            float: none;
-            }
-            .product_img{
-            display: block;
-            max-width: 100%;
-            height: 400px;
-            }
-
-        </style>
+        
     </head>
     <body>
     <%@ include file="/views/common/header.jsp" %>

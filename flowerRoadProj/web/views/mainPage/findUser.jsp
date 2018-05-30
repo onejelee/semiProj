@@ -12,40 +12,26 @@
 <br /><br /><br /><br /><br /><br />
 <article class="container" style="text-align:center;">
             <div class="col-lg-12 col-md-12 col-sm-12" id="container"></div>
-            <div class="find_account col-lg-4 col-md-4 col-sm-4" id="find">
+            <div class="find_account col-lg-5 col-md-5 col-sm-5" id="find">
                 <h3><a href="on" class="id">아이디 찾기</a><span class="txt_bar">ㅣ</span><a href="#">비밀번호 찾기</a></h3>
 
                 <h2>아이디 찾기</h2>
                 <form class="form-horizontal">
                     <div class="form-group" id="name">
-                        <label for="inputname" class="col-lg-3 col-md-3 col-sm-3 control-label">이름</label>
-                        <div class="col-lg-9 col-md-9 col-sm-9 canter">
+                        <label for="inputname" class="col-lg-3 col-md-3 col-sm-3 control-label" style="text-align:left;">이름</label>
+                        <div class="col-lg-9 col-md-9 col-sm-9">
                             <input type="text" class="form-control" id="inputname" placeholder="이름">
                         </div>
                     </div>
                     <div class="form-group" id="name">
-                        <label for="inputname" class="col-lg-4 col-md-4 col-sm-4 control-label">이메일</label>
-                        <div class="col-lg-8 col-md-8 col-sm-8 canter">
+                        <label for="inputname" class="col-lg-3 col-md-3 col-sm-3 control-label" style="text-align:left;">이메일</label>
+                        <div class="col-lg-9 col-md-9 col-sm-9">
                             <input type="text" class="form-control" id="inputname" placeholder="이메일">
                         </div>
                     </div>
 
                 </form>
-                <div class="form-group" id="name">
-                    <label for="inputname" class="col-lg-2 col-md-2 col-sm-2 control-label">이름</label>
-                    <div class="col-lg-10 col-md-10 col-sm-10 canter">
-                        <input type="text" class="form-control" id="inputname" placeholder="이름">
-                    </div>
-                </div>
-                <div class="form-group" id="name">
-                    <label for="inputname" class="col-lg-2 col-md-2 col-sm-2 control-label">이름</label>
-                    <div class="col-lg-10 col-md-10 col-sm-10 canter">
-                        <input type="text" class="form-control" id="inputname" placeholder="이름">
-                    </div>
-                </div>
-
-
-
+                
 
                 <div class="id">
                     <label for="inputPassword" class=" control-label">생년월일</label>
@@ -74,12 +60,9 @@
                     </div>
                 </div>
 
-
-
-
             </div>
-            <div class="col-lg-12 col-md-12 col-sm-12" id="container"></div>
-            <div class="find_account col-lg-4 col-md-4 col-sm-4 canter" id="find">
+            <div class="col-lg-2 col-md-2 col-sm-2"></div>
+            <div class="find_account col-lg-5 col-md-5 col-sm-5" id="find">
                 <h3><a href="on">아이디 찾기</a><span class="txt_bar">ㅣ</span><a href="#">비밀번호 찾기</a></h3>
 
                 <h2>비밀번호 찾기</h2>

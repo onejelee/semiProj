@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="com.fr.jsp.member.model.vo.Member"%>
 <%
-	Member m = (Member)session.getAttribute("member");
+   String memberNum = (String)session.getAttribute("memberNum");
 %>
 <!DOCTYPE html>
 
@@ -30,8 +30,18 @@
     .navbar-default {
       background-color: rgba(255, 254, 254, 0.9);
     }
+    .btn {cursor:pointer;}
     </style>
+<%-- <script>
+   function mainGo(){
+      location.href="<%=request.getContextPath()%>/main.jsp";
+   }
 
+     $('#logo').on('click', function (e) {
+       window.location.href="<%=request.getContextPath()%>/main.jsp";
+    }); 
+}
+</script> --%>
 
 <!-- <body style="height:5000px"> -->
    
@@ -49,7 +59,7 @@
             </div>
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" style="text-align:center; display:inline-block;">
                 <div id="no1">
-                    <img src="<%=request.getContextPath()%>/resources/images/FlowerRoadLogo.jpg" style="width:120px; height:80px">
+                    <a href="<%=request.getContextPath()%>/main.jsp"><img src="<%=request.getContextPath()%>/resources/images/FlowerRoadLogo.jpg" class="btn" style="width:120px; height:80px"></a>
                 </div>
                 <div style="text-align:center; display:inline-block;" id="no2" class="col-sm-12 col-xs-12 col-lg-12 col-md-12">
 
@@ -77,19 +87,19 @@
                 <div class="collapse navbar-collapse">
                    
                         <ul class="nav navbar-nav navbar-right">
-                        <%if(m==null){ %>
+                        <%if(memberNum==null){ %>
                             <li>
-                                <a href="#">로그인</a>
+                                <a href="<%=request.getContextPath()%>/views/mainPage/login.jsp">로그인</a>
                             </li>
                             <li>
                                 <a href="#">회원가입</a>
                             </li>
                             <%}else{ %>
                             <li>
-                                <a href="#">로그아웃</a>
+                                <a href="<%= request.getContextPath() %>/logout.me">로그아웃</a>
                             </li>
                             <li>
-                                <a href="#">마이페이지</a>
+                                <a href="<%=request.getContextPath()%>/views/myPage/myPage_main.jsp">마이페이지</a>
                             </li>
                             <%} %>
                             <li>
@@ -98,12 +108,12 @@
                         </ul>
                     
                     <br><br><br><br>
-                        <form class="navbar-form navbar-right" role="search" style="width:310px">
+                        <!-- <form class="navbar-form navbar-right" role="search" style="width:310px">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="검색">
                                 <button type="submit" class="btn btn-default">검색</button>
                             </div>
-                        </form>
+                        </form> -->
                   
                 </div>
 
@@ -112,3 +122,4 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+    

@@ -71,17 +71,21 @@
 	                <div class="col-sm-4">
 						<input type="text" id="zipCode" name="zipCode" style="width: 100%; height:100%">
 					</div>
-					<div class="col-sm-2">
+					<div class="col-sm-1">
 						<div id="ckZip" onclick="addrSearch();">검색</div>
 					</div>
 				</div>
 				<div class="form-group">
-				<label for="address1" class="col-sm-2 control-label">주소</label>
-				<input type="text" id="address1" class="form-control" name="address1">
+					<label for="address1" class="col-sm-2 control-label">주소</label>
+					<div class="col-sm-6">
+					<input type="text" id="address1" class="form-control" name="address1">
+					</div>
 				</div>
 				<div class="form-group">
-				<label for="address2" class="col-sm-2 control-label">상세주소</label>
-				<input type="text" id="address2" class="form-control" name="address2">
+					<label for="address1" class="col-sm-2 control-label">상세주소</label>
+					<div class="col-sm-6">
+					<input type="text" id="address2" class="form-control" name="address2">
+					</div>
 				</div>
                 <div class="form-group">
                     <label for="inputNumber" class="col-sm-2 control-label">휴대폰번호</label>
