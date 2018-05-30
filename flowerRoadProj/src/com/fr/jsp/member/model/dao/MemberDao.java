@@ -147,6 +147,7 @@ public class MemberDao {
 	            resultMember.setSecondPw((rset.getString("SECOND_PW")));
 	            resultMember.setImagePath((rset.getString("IMAGE_PATH")));
 	            resultMember.setEnrollDate((rset.getDate("ENROLL_DATE")));
+	            resultMember.setMemberEmail(rset.getString("MEMBER_EMAIL"));
 	         }
 	      } catch (SQLException e) {
 	         e.printStackTrace();
@@ -161,25 +162,35 @@ public class MemberDao {
 	public Member insertInfo(Connection con, Member m) {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
-		Member resultM = null;
+		Member resultMember = null;
 		
 		try{
 			
 			String query = prop.getProperty("insertInfo");
 			pstmt = con.prepareStatement(query);
-			pstmt.setString(1, m.getMemberId());
-			System.out.println("m의 id : "+m.getMemberId());
+			pstmt.setString(1, m.getMemberNum());
+			System.out.println("m의 num : "+m.getMemberNum());
 			rset = pstmt.executeQuery();
 			
 			if(rset.next()){
-				resultM = new Member();
-				
-				resultM.setMemberId(rset.getString(1));
-				resultM.setMemberName(rset.getString(2));
-				resultM.setMemberEmail(rset.getString(3));
-				resultM.setMemberAddress(rset.getString(4));
-				resultM.setMemberPhone(rset.getString(5));
-				resultM.setEnrollDate(rset.getDate(6));
+				resultMember = new Member();
+	            
+	            
+	            resultMember.setMemberNum((rset.getString("MEMBER_NUM")));
+	            resultMember.setMemberId((rset.getString("MEMBER_ID")));
+	            resultMember.setMemberPw(rset.getString("MEMBER_PW"));
+	            resultMember.setMemberName((rset.getString("MEMBER_NAME")));
+	            resultMember.setMemberAddress((rset.getString("MEMBER_ADDRESS")));
+	            resultMember.setMemberPhone(rset.getString("MEMBER_PHONE"));
+	            if(rset.getString("MEMBER_GENDER")!=null){   
+	            resultMember.setMemberGender(rset.getString("MEMBER_GENDER").charAt(0));
+	            }
+	            resultMember.setMemberBirthDate(rset.getDate("MEMBER_BIRTH_DATE"));
+	            resultMember.setGradeCode(rset.getString("GRADE_CODE"));
+	            resultMember.setSecondPw((rset.getString("SECOND_PW")));
+	            resultMember.setImagePath((rset.getString("IMAGE_PATH")));
+	            resultMember.setEnrollDate((rset.getDate("ENROLL_DATE")));
+	            resultMember.setMemberEmail(rset.getString("MEMBER_EMAIL"));
 				
 			}else{
 				System.out.println("없어!");
@@ -190,7 +201,7 @@ public class MemberDao {
 			close(rset);
 			close(pstmt);
 		}
-		return resultM;
+		return resultMember;
 	}
 
 	// 비밀번호 변경

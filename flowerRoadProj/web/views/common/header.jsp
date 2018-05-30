@@ -2,6 +2,8 @@
     pageEncoding="UTF-8" import="com.fr.jsp.member.model.vo.Member"%>
 <%
    String memberNum = (String)session.getAttribute("memberNum");
+	Member m = (Member)session.getAttribute("m");
+	
 %>
 <!DOCTYPE html>
 
@@ -11,7 +13,7 @@
     <script src="<%=request.getContextPath()%>/resources/js/jquery-1.12.2.min.js"></script>
     <script src="<%=request.getContextPath()%>/resources/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="icon" href="<%=request.getContextPath()%>/images/FlowerRoadLogo.png" type="image/ico" />
+    <link rel="icon" href="<%=request.getContextPath()%>/resources/images/FlowerRoadLogo.png" type="image/ico" />
     <style>
     
         .navbar-bottom-font {
@@ -99,7 +101,7 @@
                                 <a href="<%= request.getContextPath() %>/logout.me">로그아웃</a>
                             </li>
                             <li>
-                                <a href="<%=request.getContextPath()%>/views/myPage/myPage_main.jsp">마이페이지</a>
+                                <a href="<%=request.getContextPath()%>/infoMain.me">마이페이지</a>
                             </li>
                             <%} %>
                             <li>

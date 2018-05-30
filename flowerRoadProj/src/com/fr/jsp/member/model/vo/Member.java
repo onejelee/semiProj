@@ -22,8 +22,8 @@ public class Member {
 	// 생성자
 	public Member(){}
 	
-	public Member(String id) {
-		this.memberId = id;
+	public Member(String num) {
+		this.memberNum = num;
 	}
 
 	public Member(String id, String pwd) {
@@ -119,8 +119,11 @@ public class Member {
 		return "Member [memberNum=" + memberNum + ", memberId=" + memberId + ", memberPw=" + memberPw + ", memberName="
 				+ memberName + ", memberAddress=" + memberAddress + ", memberPhone=" + memberPhone + ", memberGender="
 				+ memberGender + ", memberBirthDate=" + memberBirthDate + ", gradeCode=" + gradeCode + ", secondPw="
-				+ secondPw + ", imagePath=" + imagePath + ", enrollDate=" + enrollDate + "]";
+				+ secondPw + ", imagePath=" + imagePath + ", enrollDate=" + enrollDate + ", memberEmail=" + memberEmail
+				+ "]";
 	}
+
+	
 	
 	
 

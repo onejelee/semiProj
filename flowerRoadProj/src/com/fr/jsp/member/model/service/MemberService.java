@@ -53,6 +53,7 @@ public class MemberService {
 	      return resultM;
 	   }
 
+	// 회원 인포 확인
 	public Member insertInfo(Member m) {
 		Connection con = getConnection();
 		Member resultM = mDao.insertInfo(con,m);

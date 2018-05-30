@@ -24,19 +24,21 @@ public class MemberInfoMain extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("id");
+		HttpSession session = request.getSession(false);
 		
-		Member m = new Member(id);
+		String num = (String)session.getAttribute("memberNum");
+		System.out.println(num);
+		Member m = new Member(num);
 		
 		MemberService ms = new MemberService();
 		
 		m = ms.insertInfo(m);
 		System.out.println(m);
+		
 		if(m != null){
-			HttpSession session = request.getSession();
-			session.setAttribute("session", m);
-			request.getRequestDispatcher("/views/myPage/myPage_main.jsp")
-			.forward(request, response);
+			session.setAttribute("m", m);
+			request.getRequestDispatcher("views/myPage/myPage_main.jsp").forward(request, response);
+			
 			
 		}else{
 			System.out.println("존재하지 않는 ID 입니다.");
