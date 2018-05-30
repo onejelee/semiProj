@@ -23,11 +23,12 @@ public class MemberInfoUpdate extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
+		String email = request.getParameter("email");
 		String addr = request.getParameter("addr");
 		String phone = request.getParameter("phone");
 		
 		Member m = (Member)session.getAttribute("session");
-		
+		m.setMemberEmail(email);
 		m.setMemberAddress(addr);
 		m.setMemberPhone(phone);
 		

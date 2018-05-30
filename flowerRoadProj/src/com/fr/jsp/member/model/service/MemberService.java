@@ -12,6 +12,39 @@ public class MemberService {
 	public MemberService(){
 		mDao=new MemberDao();
 	}
+	
+	public Member SelectMember(Member m) {
+		Connection con = getConnection();
+		Member resultM = mDao.selectMember(con,m);
+		close(con);
+		return resultM;
+	}
+	
+	public int findMember(String memberNum) {
+		Connection con = getConnection();
+		int result = 0;
+		result= mDao.findMember(con,memberNum);
+		if(result > 0){
+			commit(con);
+		}else{
+			rollback(con);
+		}
+		close(con);
+		return result;
+	}
+	
+	public int snsInsertMember(String memberNum) {
+		Connection con = getConnection();
+		int result = 0;
+		result= mDao.snsInsertMember(con,memberNum);
+		if(result > 0){
+			commit(con);
+		}else{
+			rollback(con);
+		}
+		close(con);
+		return result;
+	}
 
 	public Member insertInfo(Member m) {
 		Connection con = getConnection();

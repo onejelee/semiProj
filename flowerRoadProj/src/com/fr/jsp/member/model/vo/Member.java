@@ -17,6 +17,7 @@ public class Member {
 	private String secondPw;
 	private String imagePath;
 	private Date enrollDate;
+	private String memberEmail;
 	
 	// 생성자
 	public Member(){}
@@ -102,6 +103,15 @@ public class Member {
 	}
 	public void setEnrollDate(Date enrollDate) {
 		this.enrollDate = enrollDate;
+	}
+	
+
+	public String getMemberEmail() {
+		return memberEmail;
+	}
+
+	public void setMemberEmail(String memberEmail) {
+		this.memberEmail = memberEmail;
 	}
 
 	@Override

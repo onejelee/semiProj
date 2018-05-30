@@ -93,10 +93,11 @@
                         <%=m.getMemberName() %></p></div><br><br><br>
     
                         <div class="col-sm-1 col-md-1 col-lg-1"></div>
-                        <div class="col-sm-2 col-md-2 col-lg-2"><b>성별</b></div>
+                        <div class="col-sm-2 col-md-2 col-lg-2"><b>이메일</b></div>
                         <div class="col-sm-2 col-md-2 col-lg-2"></div>
-                        <div class="col-sm-2 col-md-2 col-lg-2"><p class="text-muted" style="font-weight:bold;">
-                        <%= m.getMemberGender() %></p></div>  <br><br><br>
+                        <div class="col-sm-2 col-md-2 col-lg-2">
+                                <input type="email" id="email" >
+                        </div> <br><br><br>
     
                         <div class="col-sm-1 col-md-1 col-lg-1"></div>
                         <div class="col-sm-2 col-md-2 col-lg-2"><b>주소</b></div>
@@ -134,12 +135,12 @@
         
         <script>
         	function modiComplete(){
-        		alert("확인");
+        		var email = $('#email').val()
         		var addr = $('#addr').val();
         		console.log(addr);
         		var phone = $('#tel1').val()+$('#tel2').val()+$('#tel3').val();
         		console.log(phone);
-        		location.href = "<%= request.getContextPath()%>/infoModi.me?addr="+addr+"&phone="+phone;
+        		location.href = "<%= request.getContextPath()%>/infoModi.me?email="+email"&addr="+addr+"&phone="+phone;
         		
         	}
         </script>

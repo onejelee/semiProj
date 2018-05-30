@@ -3,21 +3,9 @@
 <!DOCTYPE html>
 
     
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../../../resources/css/bootstrap.min.css">
-  <script src="../../../resources/js/jquery-1.12.2.min.js"></script>
-  <script src="../../../resources/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <style>
   	footer ul li {
       display: inline;
-    }
-    .navbar-default {
-      background-color: rgba(255, 254, 254, 0.9);
-    }
-    .test-border{
-    	border: 1px solid black;
     }
     </style>
   
@@ -61,19 +49,19 @@
                   <div>
                     <a href="#" onclick="javascript:window.open('https://twitter.com/intent/tweet?text=[%EA%B3%B5%EC%9C%A0]%20' +encodeURIComponent(document.URL)+'%20-%20'+encodeURIComponent(document.title), 'twittersharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
                       target="_blank">
-                      <img style="width:50px; height: 50px" src="../../resources/images/twitter.png" alt="Share on Twitter">트위터버튼</a>
+                      <img style="width:50px; height: 50px" src="<%=request.getContextPath()%>/resources/images/main/twitter.png" alt="Share on Twitter">트위터버튼</a>
                     <a href="#" onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u=' +encodeURIComponent(document.URL)+'&t='+encodeURIComponent(document.title), 'facebooksharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
                       target="_blank">
-                      <img style="width:50px; height: 50px" src="../../resources/images/facebook.png" alt="Share on Facebook">페이스북버튼</a>
+                      <img style="width:50px; height: 50px" src="<%=request.getContextPath()%>/resources/images/main/facebook.png" alt="Share on Facebook">페이스북버튼</a>
                     <a href="#" onclick="javascript:window.open('https://plus.google.com/share?url=' +encodeURIComponent(document.URL), 'googleplussharedialog','menubar=no,toolbar=no,resizable=yes, scrollbars=yes,height=350,width=600');return false;"
                       target="_blank">
-                      <img style="width:50px; height: 50px" src="../../resources/images/googlePlus.png" alt="Share on Google+">구글플러스버튼</a>
+                      <img style="width:50px; height: 50px" src="<%=request.getContextPath()%>/resources/images/main/googlePlus.png" alt="Share on Google+">구글플러스버튼</a>
                     <a href="#" onclick="javascript:window.open('https://story.kakao.com/s/share?url=' +encodeURIComponent(document.URL), 'kakaostorysharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes, height=400,width=600');return false;"
                       target="_blank">
-                      <img style="width:50px; height: 50px" src="../../resources/images/kakaoStory.jpg" alt="Share on kakaostory">카카오스토리버튼</a>
+                      <img style="width:50px; height: 50px" src="<%=request.getContextPath()%>/resources/images/main/kakaoStory.jpg" alt="Share on kakaostory">카카오스토리버튼</a>
                     <a href="#" onclick="javascript:window.open('http://share.naver.com/web/shareView.nhn?url=' +encodeURIComponent(document.URL)+'&title='+encodeURIComponent(document.title), 'naversharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
                       target="_blank">
-                      <img style="width:50px; height: 50px" src="../../resources/images/naver.jpg" alt="Share on Naver">네이버버튼</a>
+                      <img style="width:50px; height: 50px" src="<%=request.getContextPath()%>/resources/images/main/naver.jpg" alt="Share on Naver">네이버버튼</a>
                   </div>
                 </div>
                 <div class="col-sm-3 col-md-3 col-lg-2"></div>

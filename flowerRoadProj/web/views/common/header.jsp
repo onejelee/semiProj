@@ -1,22 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="com.fr.jsp.member.model.vo.Member"%>
+<%
+	Member m = (Member)session.getAttribute("member");
+%>
 <!DOCTYPE html>
 
-
-
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/bootstrap.css">
-    <script src="<%=request.getContextPath()%>/resources/js/jquery-1.12.2.js"></script>
-    <script src="<%=request.getContextPath()%>/resources/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <link rel="icon" href="../images/FlowerRoadLogo.png" type="image/ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- 
+    <link rel="stylesheet" href="../../../resources/css/bootstrap.min.css"> -->
+    <script src="<%=request.getContextPath()%>/resources/js/jquery-1.12.2.min.js"></script>
+    <script src="<%=request.getContextPath()%>/resources/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="icon" href="<%=request.getContextPath()%>/images/FlowerRoadLogo.png" type="image/ico" />
     <style>
+    
         .navbar-bottom-font {
             font-weight: bold;
         }
-
-    
 
         @media (max-width: 768px) {
             #no1,
@@ -27,7 +27,9 @@
                 width: 750px;
             }
         }
-
+    .navbar-default {
+      background-color: rgba(255, 254, 254, 0.9);
+    }
     </style>
 
 
@@ -42,12 +44,12 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header col-xs-2 col-sm-2 col-md-2 col-lg-2">
                 <a href="#" id="favorite">
-                    <img src="<%=request.getContextPath()%>/resources/images/favorite.png" width="75px" height="75px">
+                    <img src="<%=request.getContextPath()%>/resources/images/main/favorite.png" width="75px" height="75px">
                 </a>
             </div>
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" style="text-align:center; display:inline-block;">
                 <div id="no1">
-                    <img src="<%=request.getContextPath()%>/resources/images/city1.PNG" style="width:120px; height:80px">
+                    <img src="<%=request.getContextPath()%>/resources/images/FlowerRoadLogo.jpg" style="width:120px; height:80px">
                 </div>
                 <div style="text-align:center; display:inline-block;" id="no2" class="col-sm-12 col-xs-12 col-lg-12 col-md-12">
 
@@ -75,12 +77,21 @@
                 <div class="collapse navbar-collapse">
                    
                         <ul class="nav navbar-nav navbar-right">
+                        <%if(m==null){ %>
                             <li>
                                 <a href="#">로그인</a>
                             </li>
                             <li>
                                 <a href="#">회원가입</a>
                             </li>
+                            <%}else{ %>
+                            <li>
+                                <a href="#">로그아웃</a>
+                            </li>
+                            <li>
+                                <a href="#">마이페이지</a>
+                            </li>
+                            <%} %>
                             <li>
                                 <a href="#">장바구니</a>
                             </li>

@@ -93,10 +93,10 @@
 					<%= m.getMemberName() %></p></div> <br><br><br>
 
                     <div class="col-sm-1 col-md-1 col-lg-1"></div>
-                    <div class="col-sm-2 col-md-2 col-lg-2"><b>성별</b></div>
+                    <div class="col-sm-2 col-md-2 col-lg-2"><b>이메일</b></div>
                     <div class="col-sm-2 col-md-2 col-lg-2"></div>
                     <div class="col-sm-2 col-md-2 col-lg-2"><p class="text-muted" style="font-weight:bold;">
-					<%= m.getMemberGender() %></p></div> <br><br><br>
+					<%= m.getMemberEmail() %></p></div> <br><br><br>
 
                     <div class="col-sm-1 col-md-1 col-lg-1"></div>
                     <div class="col-sm-2 col-md-2 col-lg-2"><b>주소</b></div>

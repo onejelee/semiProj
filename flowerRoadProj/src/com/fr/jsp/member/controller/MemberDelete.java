@@ -25,11 +25,15 @@ public class MemberDelete extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		
 		Member m = (Member)session.getAttribute("session");
+		
 		MemberService ms = new MemberService();
 		
 		if(ms.memberDelete(m) != 0){
+			
+			if(session != null){
+				session.invalidate();
+			}
 			response.sendRedirect("views/myPage/myPage_main.jsp");
-			session.invalidate();
 		}else{
 			System.out.println("실패!!");
 		}
