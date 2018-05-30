@@ -61,10 +61,10 @@
         <br><br><br><br><br><br><br><br><br><br>
         <div class="container-fluid">
             <div class="col-sm-1 col-md-1 col-lg-1"></div>
-            <div class="category col-sm-2 col-md-2 col-lg-2" 
-                style="font-weight:bold; text-decoration: underline;" id="info" onclick="info();">내 정보</div>
+            <div class="category col-sm-2 col-md-2 col-lg-2" id="info" onclick="info();">내 정보</div>
             <div class="category col-sm-2 col-md-2 col-lg-2" id="check" onclick="orderChk();">주문 조회</div>
-            <div class="category col-sm-2 col-md-2 col-lg-2" id="favarite" onclick="favorite();">관심 상품</div>
+            <div class="category col-sm-2 col-md-2 col-lg-2" 
+                style="font-weight:bold; text-decoration: underline;" id="favarite" onclick="favorite();">관심 상품</div>
             <div class="category col-sm-2 col-md-2 col-lg-2" id="1on1" onclick="oneToOne();">1:1 문의</div>
             <div class="col-sm-3 col-md-3 col-lg-3"></div> 
         </div>

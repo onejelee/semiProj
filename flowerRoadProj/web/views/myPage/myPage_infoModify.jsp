@@ -96,7 +96,8 @@
                         <div class="col-sm-2 col-md-2 col-lg-2"><b>이메일</b></div>
                         <div class="col-sm-2 col-md-2 col-lg-2"></div>
                         <div class="col-sm-2 col-md-2 col-lg-2">
-                                <input type="email" id="email" >
+                                <input type="email" id="email" size="6" >@
+                                <input type="text" id="com" size="6" />
                         </div> <br><br><br>
     
                         <div class="col-sm-1 col-md-1 col-lg-1"></div>
@@ -128,19 +129,20 @@
         <div class="container-fluid">
             <div class="col-sm-5 col-md-5 col-lg-5"></div>
             <div class="col-sm-2 col-md-2 col-lg-2">
-                <button id="modify" onclick="modiComplete()"><b>수정완료</b></button>
+                <button id="modify" onclick="modiComplete();"><b>수정완료</b></button>
             </div>
             <div class="col-sm-5 col-md-5 col-lg-5"></div>
         </div>
         
         <script>
         	function modiComplete(){
-        		var email = $('#email').val()
+        		var email = $('#email').val()+"@"+$('#com').val();
+        		console.log(email);
         		var addr = $('#addr').val();
         		console.log(addr);
         		var phone = $('#tel1').val()+$('#tel2').val()+$('#tel3').val();
         		console.log(phone);
-        		location.href = "<%= request.getContextPath()%>/infoModi.me?email="+email"&addr="+addr+"&phone="+phone;
+        		location.href = "<%= request.getContextPath()%>/infoModi.me?email="+email+"&addr="+addr+"&phone="+phone;
         		
         	}
         </script>
