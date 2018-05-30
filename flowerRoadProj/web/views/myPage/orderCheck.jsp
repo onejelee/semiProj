@@ -91,13 +91,13 @@
                                 <input type="text" class="form-control" placeholder="조회 기간 종료일" id="datepicker"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                         </div>
                         <div class="col-sm-1 col-md-1 col-lg-1"></div>
-                        <div class="col-sm-1 col-md-1 col-lg-1"> 
+                        <div class="col-sm-2 col-md-2 col-lg-2"> 
                             <input class="ordchk btn-default" type="button" id="search" onclick="search();" value="검색" style="color:white; background:midnightblue;">
                         </div>
-                        <div class="col-sm-1 col-md-1 col-lg-1"> 
+                        <div class="col-sm-2 col-md-2 col-lg-2"> 
                             <input class="grayBtn ordchk" type="reset" value="초기화">
                         </div>
-                        <div class="col-sm-2 col-md-2 col-lg-2"></div>
+                        
                         <br><br><br><br>
 
     
@@ -107,7 +107,7 @@
                                 <th>주문일자</th>
                                 <th>상품명</th>
                                 <th>결제금액</th>
-                                <th>주문상세</th>
+                                <th>익명발송 여부</th>
                                 <th>배송현황</th>
                             </tr>
                             <tr>
