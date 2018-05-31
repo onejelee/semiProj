@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import com.fr.jsp.member.model.dao.MemberDao;
 import com.fr.jsp.member.model.vo.Member;
+import com.fr.jsp.member.model.vo.MemberBoard;
 import com.fr.jsp.product.model.vo.Product;
 import com.fr.jsp.product.model.vo.ProductFavorite;
 
@@ -119,6 +120,16 @@ public class MemberService {
 		Connection con = getConnection();
 		
 		ArrayList<ProductFavorite> list = mDao.favorite(con,num);
+		
+		close(con);
+		
+		return list;
+	}
+
+	public ArrayList<MemberBoard> oneBoard(String num) {
+		Connection con = getConnection();
+		
+		ArrayList<MemberBoard> list = mDao.oneBoard(con,num);
 		
 		close(con);
 		

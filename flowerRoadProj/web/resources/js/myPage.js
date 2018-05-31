@@ -36,5 +36,5 @@ function question(){
 }
 // 1:1 게시판 목록보기
 function viewBoard(){
-    location.href = "/flowerRoadProj/views/myPage/1on1Page_board.jsp"
+    location.href = "/flowerRoadProj/oneBoard.me"
 }

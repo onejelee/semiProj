@@ -33,7 +33,6 @@ public class MemberFavorite extends HttpServlet {
 		
 		String page ="";
 		if(list != null && !list.isEmpty()){
-			System.out.println("들어오니??");
 			page = "/views/myPage/favorite.jsp";
 			request.setAttribute("pflist", list);
 		} else {

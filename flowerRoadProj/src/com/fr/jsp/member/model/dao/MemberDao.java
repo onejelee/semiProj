@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Properties;
 
 import com.fr.jsp.member.model.vo.Member;
+import com.fr.jsp.member.model.vo.MemberBoard;
 import com.fr.jsp.product.model.vo.Product;
 import com.fr.jsp.product.model.vo.ProductFavorite;
 import com.fr.jsp.member.model.dao.MemberDao;
@@ -310,7 +311,6 @@ public class MemberDao {
 		ArrayList<ProductFavorite> list = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
-		System.out.println("여기도 : "+num);
 		String query = prop.getProperty("memberFavorite");
 		
 		try {
@@ -337,6 +337,49 @@ public class MemberDao {
 				}
 				
 				list.add(pf);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			close(rset);
+			close(pstmt);
+		}
+		System.out.println(list);
+		return list;
+	}
+	
+	public ArrayList<MemberBoard> oneBoard(Connection con, String num) {
+		ArrayList<MemberBoard> list = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		String query = prop.getProperty("1on1Board");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, num);
+			System.out.println(num);
+			rset = pstmt.executeQuery();
+			
+			list = new ArrayList<MemberBoard>();
+			String status ="";
+			
+			while(rset.next()){
+				System.out.println("들어오니?");
+				MemberBoard mb = new MemberBoard();
+				
+				mb.setBoardTitle(rset.getString(1));
+				mb.setSubmitDate(rset.getDate(2));
+				System.out.println(rset.getDate(2));
+				if(rset.getString(3) != null){
+					status = "답변 완료";
+					mb.setReplyStatus(status);
+				} else {
+					status = "미확인";
+					mb.setReplyStatus(status);
+				}
+				
+				list.add(mb);
 			}
 			
 		} catch (SQLException e) {

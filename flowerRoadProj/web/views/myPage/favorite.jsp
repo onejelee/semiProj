@@ -71,7 +71,7 @@
         <div class="container-fluid">
                 
                 <div class="col-sm-2 col-md-2 col-lg-2">
-                    <button style="width:100px; height:30px; margin-top:20px;">
+                <button style="width:100px; height:30px; margin-top:20px;">
                         전체 삭제</button>
                 </div>
                 <div class="col-sm-3 col-md-3 col-lg-3"></div>
