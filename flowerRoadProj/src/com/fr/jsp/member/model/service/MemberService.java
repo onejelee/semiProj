@@ -1,9 +1,12 @@
 package com.fr.jsp.member.model.service;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 
 import com.fr.jsp.member.model.dao.MemberDao;
 import com.fr.jsp.member.model.vo.Member;
+import com.fr.jsp.product.model.vo.Product;
+import com.fr.jsp.product.model.vo.ProductFavorite;
 
 import static com.fr.jdbc.common.JDBCTemplate.*;
 
@@ -110,6 +113,16 @@ public class MemberService {
 		}
 		close(con);
 		return result;
+	}
+
+	public ArrayList<ProductFavorite> favorite(String num) {
+		Connection con = getConnection();
+		
+		ArrayList<ProductFavorite> list = mDao.favorite(con,num);
+		
+		close(con);
+		
+		return list;
 	}
 
 }

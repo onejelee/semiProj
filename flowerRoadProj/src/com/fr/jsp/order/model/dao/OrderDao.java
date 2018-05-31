@@ -45,9 +45,7 @@ public class OrderDao {
 			rset = pstmt.executeQuery();
 			
 			list = new ArrayList<Order>();
-			System.out.println("여기");
 			while(rset.next()){
-				System.out.println("저기");
 				Order o = new Order();
 				o.setOrdered_date(rset.getDate(1));
 				o.setProduct_num(rset.getString(2));

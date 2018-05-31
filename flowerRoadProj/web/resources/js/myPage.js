@@ -24,7 +24,7 @@ function orderChk(){
 }
 // 카테고리 - 관심상품
 function favorite(){
-    location.href = "/flowerRoadProj/views/myPage/favorite.jsp"
+    location.href = "/flowerRoadProj/favorite.me"
 }
 // 카테고리 - 1:1 문의
 function oneToOne(){

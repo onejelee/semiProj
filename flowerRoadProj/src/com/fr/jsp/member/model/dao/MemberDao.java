@@ -6,9 +6,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Properties;
 
 import com.fr.jsp.member.model.vo.Member;
+import com.fr.jsp.product.model.vo.Product;
+import com.fr.jsp.product.model.vo.ProductFavorite;
 import com.fr.jsp.member.model.dao.MemberDao;
 import static com.fr.jdbc.common.JDBCTemplate.*;
 
@@ -301,6 +304,49 @@ public class MemberDao {
 			close(pstmt);
 		}
 		return result;
+	}
+
+	public ArrayList<ProductFavorite> favorite(Connection con, String num) {
+		ArrayList<ProductFavorite> list = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		System.out.println("여기도 : "+num);
+		String query = prop.getProperty("memberFavorite");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, num);
+			
+			rset = pstmt.executeQuery();
+			
+			list = new ArrayList<ProductFavorite>();
+			String quantity ="";
+			
+			while(rset.next()){
+				ProductFavorite pf = new ProductFavorite();
+				
+				pf.setImage(rset.getString(1));
+				pf.setProductName(rset.getString(2));
+				pf.setProductPrice(rset.getInt(3));
+				if(rset.getInt(4) > 0){
+					quantity = "재고있음";
+					pf.setProductQuantityState(quantity);
+				} else {
+					quantity = "재고없음";
+					pf.setProductQuantityState(quantity);
+				}
+				
+				list.add(pf);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			close(rset);
+			close(pstmt);
+		}
+		System.out.println(list);
+		return list;
 	}
 	
 }
