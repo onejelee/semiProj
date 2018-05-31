@@ -1,61 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import = "com.fr.jsp.member.model.vo.*"%>
-<%
-	Member m = (Member)session.getAttribute("session");
-%>
+
 <!DOCTYPE>
 <html>
     <head>
         <title>꽃길-주문 조회</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="<%=request.getContextPath() %>/resource/images/title_image.png" type="image/ico" />
-         <link rel="stylesheet" href="<%=request.getContextPath() %>/resource/css/bootstrap.min.css">
-         <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/myInfo.css">
-        <script src="<%=request.getContextPath() %>/resource/js/jquery-1.12.2.min.js"></script>
-        <script src="<%=request.getContextPath() %>/resource/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/myInfo.css">
         <script src="<%=request.getContextPath() %>/resources/js/myPage.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <style>
-            /*네비바 배경색 조정*/
-             .navbar-default { background-color: rgba(255, 254, 254,0.9); }
-             /*네비바 가운데 정렬*/
-            .navbar .navbar-nav {
-            display: inline-block;
-            float: none;
-            }
-            .product_img{
-            display: block;
-            max-width: 100%;
-            height: 400px;
-            }
-
-            
-        </style>
-    </head>
+            </head>
     <body>
-        <!-- 상단의 nav 바 -->
-        <nav class="navbar navbar-fixed-top navbar-default">
-            <div class="container-fluid">
-                    <div class="col-xs-3">
-                      <ul class="nav navbar-nav navbar-left">
-                        <li><a href="#">즐겨찾기</a></li>
-                        <!-- 즐겨찾기가 가능한가? 주소는 어디로 해야되나-->
-                      </ul>
-                    </div>
-                      <div class="col-xs-6" style="text-align:center; display:inline-block;">
-                          <img src="<%=request.getContextPath() %>/resources/images/mainImage2.jpg" style="width:120px; height:80px"alt="">
-                      </div>
-                    <div class="col-xs-3">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#">로그인</a></li>
-                            <li><a href="#">회원가입</a></li>
-                            <li><a href="#">장바구니</a></li>
-                            <li><a href="#">고객센터</a></li>
-                          </ul>
-                    </div>
-                  </div>
-        </nav>
+    <%@ include file="/views/common/header.jsp" %>
         <!-- 마이페이지 카테고리  -->
         <br><br><br><br><br><br><br><br><br><br>
         <div class="container-fluid">
@@ -112,5 +67,6 @@
         		location.href = "<%= request.getContextPath() %>/delMember.me";
         	}
         </script>
+        <%@ include file="/views/common/footer.jsp" %>
     </body>
 </html>

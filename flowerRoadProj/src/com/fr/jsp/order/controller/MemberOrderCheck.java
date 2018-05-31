@@ -30,13 +30,10 @@ public class MemberOrderCheck extends HttpServlet {
 		
 		ArrayList<Order> list = null;
 		
-		Member m = (Member)session.getAttribute("session");
+		Member m = (Member)session.getAttribute("m");
 		String id = m.getMemberId();
-		System.out.println(id);
 		
 		list = new OrderService().orderChk(id);
-		
-		System.out.println(list.isEmpty());
 		
 		String page ="";
 		if(list != null && !list.isEmpty()){

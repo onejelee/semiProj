@@ -292,7 +292,6 @@ public class MemberDao {
 			pstmt = con.prepareStatement(query);
 			
 			pstmt.setString(1, m.getMemberId());
-			System.out.println("id = "+m.getMemberId());
 			
 			result = pstmt.executeUpdate();
 			

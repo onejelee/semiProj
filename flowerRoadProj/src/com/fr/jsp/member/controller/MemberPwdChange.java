@@ -23,8 +23,7 @@ public class MemberPwdChange extends HttpServlet {
 		String pwd = request.getParameter("pwd");
 		
 		
-		Member m = (Member)session.getAttribute("session");
-		//Member m = (Member)request.getAttribute("m");
+		Member m = (Member)session.getAttribute("m");
 		
 		m.setMemberPw(pwd);
 		

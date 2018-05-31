@@ -61,7 +61,7 @@
             </div>
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" style="text-align:center; display:inline-block;">
                 <div id="no1">
-                    <a href="<%=request.getContextPath()%>/main.jsp"><img src="<%=request.getContextPath()%>/resources/images/FlowerRoadLogo.jpg" class="btn" style="width:120px; height:80px"></a>
+                    <a href="<%=request.getContextPath()%>/main.jsp"><img src="<%=request.getContextPath()%>/resources/images/mainImage2.jpg" class="btn" style="width:120px; height:80px"></a>
                 </div>
                 <div style="text-align:center; display:inline-block;" id="no2" class="col-sm-12 col-xs-12 col-lg-12 col-md-12">
 

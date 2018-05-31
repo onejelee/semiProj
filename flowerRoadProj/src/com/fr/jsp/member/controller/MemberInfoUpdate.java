@@ -27,7 +27,7 @@ public class MemberInfoUpdate extends HttpServlet {
 		String addr = request.getParameter("addr");
 		String phone = request.getParameter("phone");
 		
-		Member m = (Member)session.getAttribute("session");
+		Member m = (Member)session.getAttribute("m");
 		m.setMemberEmail(email);
 		m.setMemberAddress(addr);
 		m.setMemberPhone(phone);
