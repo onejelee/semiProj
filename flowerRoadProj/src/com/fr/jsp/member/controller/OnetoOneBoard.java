@@ -28,11 +28,13 @@ public class OnetoOneBoard extends HttpServlet {
 		ArrayList<MemberBoard> list = null;
 		
 		String num = (String)session.getAttribute("memberNum");
+		System.out.println("여기도 NUM : "+num);
 		
 		list = new MemberService().oneBoard(num);
 		
 		String page ="";
 		if(list != null && !list.isEmpty()){
+			System.out.println("여긴오니?");
 			page = "/views/myPage/1on1Page_board.jsp";
 			request.setAttribute("mblist", list);
 		} else {

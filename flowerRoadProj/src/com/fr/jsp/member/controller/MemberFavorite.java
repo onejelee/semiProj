@@ -30,7 +30,7 @@ public class MemberFavorite extends HttpServlet {
 		String num = (String)session.getAttribute("memberNum");
 		System.out.println("num값: "+num);
 		list = new MemberService().favorite(num);
-		
+		System.out.println(list);
 		String page ="";
 		if(list != null && !list.isEmpty()){
 			page = "/views/myPage/favorite.jsp";

@@ -358,7 +358,7 @@ public class MemberDao {
 		try {
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, num);
-			System.out.println(num);
+			System.out.println("NUM:"+num);
 			rset = pstmt.executeQuery();
 			
 			list = new ArrayList<MemberBoard>();
