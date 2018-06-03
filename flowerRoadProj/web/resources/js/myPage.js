@@ -28,7 +28,7 @@ function favorite(){
 }
 // 카테고리 - 1:1 문의
 function oneToOne(){
-    location.href = "/flowerRoadProj/views/myPage/1on1Page_board.jsp"
+    location.href = "/flowerRoadProj/oneBoard.me"
 }
 // 1:1 문의하기
 function question(){

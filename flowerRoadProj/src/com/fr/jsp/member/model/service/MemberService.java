@@ -136,4 +136,18 @@ public class MemberService {
 		return list;
 	}
 
+	public int sendBoard(MemberBoard mb) {
+		Connection con = getConnection();
+		int result =0;
+		result = mDao.sendBoard(con, mb);
+		if(result > 0){
+			commit(con);
+		}else{
+			rollback(con);
+		}
+		close(con);
+		System.out.println("여기 오니? ="+result);
+		return result;
+	}
+
 }

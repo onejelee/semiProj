@@ -358,14 +358,12 @@ public class MemberDao {
 		try {
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, num);
-			System.out.println("NUM:"+num);
 			rset = pstmt.executeQuery();
 			
 			list = new ArrayList<MemberBoard>();
 			String status ="";
 			
 			while(rset.next()){
-				System.out.println("들어오니?");
 				MemberBoard mb = new MemberBoard();
 				
 				mb.setBoardTitle(rset.getString(1));
@@ -390,6 +388,31 @@ public class MemberDao {
 		}
 		System.out.println(list);
 		return list;
+	}
+
+	public int sendBoard(Connection con, MemberBoard mb) {
+		PreparedStatement pstmt = null;
+		int result =0;
+		
+		String query = prop.getProperty("sendBoard");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, mb.getBoardTitle());
+			System.out.println("1:"+mb.getBoardTitle());
+			pstmt.setString(3, mb.getMemberNum());
+			System.out.println("2:"+mb.getMemberNum());
+			pstmt.setString(2, mb.getBoardContent());
+			System.out.println("3:"+mb.getBoardContent());
+			
+			result = pstmt.executeUpdate();
+			System.out.println("result="+result);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			close(pstmt);
+		}
+		return result;
 	}
 	
 }
