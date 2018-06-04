@@ -2,13 +2,13 @@ package com.fr.jsp.common;
 
 public class PageInfo implements java.io.Serializable{
 
-	private  int currPage;
-	private  int listCount;
-	private  int limit;
-	private  int maxPage;
-	private  int startPage;
-	private  int endPage;
-	private  int startRow;
+	private int currPage;
+	private int listCount;
+	private int limit;
+	private int maxPage;
+	private int startPage;
+	private int endPage;
+	private int startRow;
 	private int endRow;
 
 

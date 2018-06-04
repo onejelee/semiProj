@@ -7,11 +7,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Properties;
 
 import com.fr.jsp.member.model.vo.Member;
 import com.fr.jsp.order.model.vo.Order;
+import static com.fr.jdbc.common.JDBCTemplate.*;
 
 public class OrderDao {
 
@@ -64,6 +66,33 @@ public class OrderDao {
 		
 		
 		return list;
+	}
+
+	public int getListCount(Connection con, String id) {
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		int result =0;
+		String query = prop.getProperty("listCount");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, id);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()){
+				result=rset.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally{
+			close(rset);
+			close(pstmt);
+		}
+		
+		
+		return result;
 	}
 
 }
