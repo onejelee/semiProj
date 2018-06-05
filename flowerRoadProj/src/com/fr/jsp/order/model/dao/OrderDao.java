@@ -32,7 +32,7 @@ public class OrderDao {
 		}
 	}
 	
-	public ArrayList<Order> orderChk(Connection con, String id) {
+	public ArrayList<Order> orderChk(Connection con, String num, int currentPage, int limit) {
 
 		ArrayList<Order> list = null;
 		PreparedStatement pstmt = null;
@@ -42,18 +42,24 @@ public class OrderDao {
 		
 		try {
 			pstmt = con.prepareStatement(query);
-			pstmt.setString(1, id);
+			pstmt.setString(1, num);
+			
+			int startRow = (currentPage - 1)* limit +1;
+		    int endRow = startRow + (limit - 1);
+		    pstmt.setInt(2, startRow);
+		    pstmt.setInt(3, endRow);
 			
 			rset = pstmt.executeQuery();
 			
 			list = new ArrayList<Order>();
 			while(rset.next()){
 				Order o = new Order();
-				o.setOrdered_date(rset.getDate(1));
-				o.setProduct_num(rset.getString(2));
-				o.setProduct_cost(rset.getInt(3));
-				o.setAnonymous_delivery(rset.getString(4));
-				o.setOrder_state_code(rset.getString(5));
+				o.setOrder_num(rset.getString(2));
+				o.setOrdered_date(rset.getDate(3));
+				o.setProduct_num(rset.getString(4));
+				o.setProduct_cost(rset.getInt(5));
+				o.setAnonymous_delivery(rset.getString(6));
+				o.setOrder_state_code(rset.getString(7));
 				
 				list.add(o);
 			}
@@ -68,7 +74,7 @@ public class OrderDao {
 		return list;
 	}
 
-	public int getListCount(Connection con, String id) {
+	public int getListCount(Connection con, String num) {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		int result =0;
@@ -76,7 +82,7 @@ public class OrderDao {
 		
 		try {
 			pstmt = con.prepareStatement(query);
-			pstmt.setString(1, id);
+			pstmt.setString(1, num);
 			
 			rset = pstmt.executeQuery();
 			

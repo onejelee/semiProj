@@ -141,6 +141,8 @@ public class PageInfo implements java.io.Serializable{
 		
 		
 	}
+	
+	
 
 	public PageInfo(int currPage, int listCount, int limit) {
 		super();
@@ -171,6 +173,13 @@ public class PageInfo implements java.io.Serializable{
 		
 		startRow  =(currPage-1)*limit+1;
 		endRow = startRow+(limit-1);
+	}
+	
+	public PageInfo(int currentPage, int listCount, int limit, int maxPage){
+		this.currPage = currentPage;
+		this.listCount = listCount;
+		this.limit = limit;
+		this.maxPage = maxPage;
 	}
 
 	/**

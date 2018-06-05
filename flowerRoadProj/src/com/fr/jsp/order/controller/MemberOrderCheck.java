@@ -32,8 +32,7 @@ public class MemberOrderCheck extends HttpServlet {
 		ArrayList<Order> list = null;
 		OrderService oService = new OrderService();
 		
-		Member m = (Member)session.getAttribute("m");
-		String id = m.getMemberId();
+		String num = (String)session.getAttribute("memberNum");
 		// -- 페이지 처리 코드 부분 -- //
 		
 		int startPage; // 한번에 표시될 게시글들의 시작 페이지
@@ -54,7 +53,7 @@ public class MemberOrderCheck extends HttpServlet {
 		}
 				
 		//전체 게시글의 수
-		int listCount = oService.getListCount(id);
+		int listCount = oService.getListCount(num);
 		System.out.println("총 게시글 수 : "+listCount);
 				
 		//총 게시글 수에 대한 페이지 계산
@@ -81,12 +80,13 @@ public class MemberOrderCheck extends HttpServlet {
 		
 		
 		
-		list = new OrderService().orderChk(id);
+		list = new OrderService().orderChk(num, currentPage,limit);
 		
 		String page ="";
 		if(list != null && !list.isEmpty()){
 			page = "/views/myPage/orderCheck.jsp";
 			request.setAttribute("list", list);
+			request.setAttribute("pi", pi);
 		} else {
 			System.out.println("실패");
 		}
