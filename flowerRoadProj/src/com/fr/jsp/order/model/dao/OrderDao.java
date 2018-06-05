@@ -52,6 +52,7 @@ public class OrderDao {
 			rset = pstmt.executeQuery();
 			
 			list = new ArrayList<Order>();
+			
 			while(rset.next()){
 				Order o = new Order();
 				o.setOrder_num(rset.getString(2));
@@ -69,7 +70,6 @@ public class OrderDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		
 		return list;
 	}

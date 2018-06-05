@@ -51,6 +51,8 @@ public class MemberOrderCheck extends HttpServlet {
 		if(request.getParameter("currentPage")!=null){
 			currentPage = Integer.parseInt(request.getParameter("currentPage"));
 		}
+		System.out.println(currentPage);
+		
 				
 		//전체 게시글의 수
 		int listCount = oService.getListCount(num);
@@ -80,7 +82,7 @@ public class MemberOrderCheck extends HttpServlet {
 		
 		
 		
-		list = new OrderService().orderChk(num, currentPage,limit);
+		list = new OrderService().orderChk(num, currentPage, limit);
 		
 		String page ="";
 		if(list != null && !list.isEmpty()){
